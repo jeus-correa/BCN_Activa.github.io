@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #cccccc; /* Fondo de color gris */
+            margin: 0;
+        }
+
+        #chat-container {
+            width: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chat-box {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chat-log {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .user-message {
+            background-color: white; /* Mensaje del usuario de color blanco */
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .bot-message {
+            background-color: #d4edda; /* Mensaje del bot de color verde */
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .option {
+            background-color: #d1e7dd;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .option:hover {
+            background-color: #c3d7cd;
+        }
+
+        #user-input {
+            width: calc(100% - 60px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #clear-button {
+            background-color: #dc3545; /* Botón borrar de color rojo */
+            margin-top: 10px;
+        }
+
+        #clear-button:hover {
+            background-color: #c82333;
+        }
+
+        #options img {
+            width: 100px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box">
+            <div id="chat-log"></div>
+            <div id="options">
+                <img src="img/BCN LOGO.png" alt="Imagen">
+                <div class="option" onclick="sendQuestion('hola')">Hola</div>
+                <div class="option" onclick="sendQuestion('¿Qué menús puedo contratar?')">¿Qué menús puedo contratar?</div>
+                <div class="option" onclick="sendQuestion('¿Cómo podría contratar su producto?')">¿Cómo podría contratar su producto?</div>
+                <div class="option" onclick="sendQuestion('¿Dónde están ubicados?')">¿Dónde están ubicados?</div>
+            </div>
+            <a href="index.html"><button id="clear-button"  onclick="clearChat()">Volver</button></a>
+        </div>
+    </div>
+    <script>
+        const menusDisponibles = ["los  menús son totalmente personalizados según el cliente  "];
+        const ubicaciones = [
+            "Sede Principal: Benedicto León 261, Curicó, Maule",
+        ];
+
+        function handleQuestion(question) {
+            const lowerQuestion = question.toLowerCase();
+
+            if (lowerQuestion.includes("hola")) {
+                return "¡Hola! ¿En qué te puedo ayudar?";
+            } else if (lowerQuestion.includes("menú")) {
+                return `Los menús disponibles son: ${menusDisponibles.join(', ')}.`;
+            } else if (lowerQuestion.includes("contratar")) {
+                return "Para contratar nuestros productos, por favor visita nuestra página web BCN Activa o llama al +56 75 238 2216. Gmail: contacto@bcnactiva.cl";
+            } else if (lowerQuestion.includes("ubicado") || lowerQuestion.includes("ubicación")) {
+                return `Nuestras ubicaciones son: ${ubicaciones.join(', ')}.`;
+            } else {
+                return "Lo siento, no entiendo tu pregunta. ¿Puedes reformularla?";
+            }
+        }
+
+        function sendQuestion(userInput) {
+            const chatLog = document.getElementById('chat-log');
+
+            const userMessage = document.createElement('div');
+            userMessage.className = 'user-message';
+            userMessage.innerText = `Tú: ${userInput}`;
+            chatLog.appendChild(userMessage);
+
+            const botResponse = handleQuestion(userInput);
+            const botMessage = document.createElement('div');
+            botMessage.className = 'bot-message';
+            botMessage.innerText = `Bot: ${botResponse}`;
+            chatLog.appendChild(botMessage);
+
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function clearChat() {
+            const chatLog = document.getElementById('chat-log');
+            chatLog.innerHTML = '';
+        }
+    </script>
+</body>
+</html>

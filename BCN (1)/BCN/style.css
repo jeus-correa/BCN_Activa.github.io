@@ -1,0 +1,271 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10;
+    padding: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    
+    
+}
+
+.navbar img {
+    height: 70px; /* Ajusta la altura de la imagen según sea necesario */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.carousel {
+    max-width: 100%; /* Ajusta el tamaño del carrusel aquí */
+    margin: auto; /* Centra el carrusel en la página */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 800px; /* Ajusta la altura del carrusel aquí */
+    object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin distorsionarse */
+}
+
+.carousel-caption {
+    font-weight: bold; /* Hace el texto en negrita */
+}
+
+
+.tex{
+     text-align: center;
+     font-family: Helvetica, Arial, Helvetica, sans-serif, ;
+     font-weight: bold;
+     margin-top: 2%;
+     
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 50px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples líneas si es necesario */
+    margin-top: 50px; /* Espacio superior para el contenedor */
+    
+}
+
+
+.carousel-caption {
+    position: absolute;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+  
+  .carousel-caption .display-4 {
+    font-size: 5rem; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  .carousel-caption .lead {
+    font-size: 5rem; /* Ajusta el tamaño según sea necesario */
+  }
+  
+
+
+
+.text{
+    text-align: center;
+    font-family: Helvetica, Arial, Helvetica, sans-serif, ;
+    font-weight: bold;
+    margin-top: 2%;
+    color: rgb(255, 255, 255);
+
+    
+}
+
+
+
+
+.img-resized {
+    width: 100%; /* Mantiene el ancho completo */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    max-height: 700px; /* Define un límite máximo para la altura */
+    object-fit: cover; /* Asegura que la imagen cubra el área especificada sin distorsionarse */
+    object-fit: cover; /* Asegura que la imagen cubra el área especificada sin distorsionarse */
+    filter: blur(5px) brightness(70%); /* Ajusta el valor del desenfoque y la luminosidad */
+  }
+  
+
+.card-text{
+    font-family: Helvetica, Arial, Helvetica, sans-serif, ;
+    font-weight: bold;
+    margin-top: 2%;
+    color: rgb(255, 255, 255);
+    margin-left: 90px;
+
+}
+
+
+  
+.text-nustro-trabajo{
+    font-family: Helvetica, Arial, Helvetica, sans-serif, ;
+    font-weight: bold;
+    margin-top: 2%;
+    color: rgb(255, 255, 255);
+    margin-left: 90px;
+    text-align: center;
+
+}
+
+section{
+    display: flex;
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    margin-top: 3%;
+  
+    
+  }
+  section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .5;
+    transition: .5s ease;
+  }
+  section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+  }
+
+
+.experiencia{
+    display: flex;
+    margin-top: -20%;
+    justify-content: flex-start;
+}
+
+.Haccp{
+
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12%;
+
+}   
+
+
+
+.card-custom {
+    max-width: 400px; /* Ancho máximo de la tarjeta */
+    margin: 0 auto; /* Centrar la tarjeta horizontalmente */
+    height: 10%;
+    margin-top: -35%;
+  }
+
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+
+  .dos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    margin-top: -24%;
+}
+.contact-card {
+    background-color: white;
+    padding: 2%;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin-left: auto;
+}
+.contact-card h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+.contact-card label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.contact-card input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+}
+
+
+/* ------------------------------------------------------- */
+
+.card_video_BCN {
+    max-width: 600px;
+    margin: 30px auto;
+    border: 1px solid #acacac;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+   
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    
+
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media (max-width: 600px) {
+    .card {
+        border: none;
+        box-shadow: none;
+    }
+}
